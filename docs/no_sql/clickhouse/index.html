@@ -1,0 +1,707 @@
+<!DOCTYPE html><html><head>
+      <title>index</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <link rel="stylesheet" href="https://zhmhbest.gitee.io/hellomathematics/style/index.css">
+<script src="https://zhmhbest.gitee.io/hellomathematics/style/index.js"></script>
+<h1 class="mume-header" id="clickhouseindexhtml"><a href="../index.html">ClickHouse</a></h1>
+
+<ul>
+<li><a href="#clickhouseindexhtml">ClickHouse</a>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85">&#x5B89;&#x88C5;</a>
+<ul>
+<li><a href="#%E7%B3%BB%E7%BB%9F">&#x7CFB;&#x7EDF;</a>
+<ul>
+<li><a href="#%E4%BE%9D%E8%B5%96%E6%A3%80%E6%9F%A5">&#x4F9D;&#x8D56;&#x68C0;&#x67E5;</a></li>
+<li><a href="#%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99">&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AEhostszookeeperindexhtml%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE">&#x914D;&#x7F6E;Hosts</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85zookeeperzookeeperindexhtml">&#x5B89;&#x88C5;Zookeeper</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%89%E8%A3%85clickhouse">&#x5B89;&#x88C5;ClickHouse</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AEclickhouse">&#x914D;&#x7F6E;ClickHouse</a>
+<ul>
+<li><a href="#configxmlhttpsclickhousetechdocszhoperationsconfiguration-files">config.xml</a></li>
+<li><a href="#userxml">user.xml</a></li>
+<li><a href="#metricaxml">metrica.xml</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B0%83%E8%AF%95clickhouse">&#x8C03;&#x8BD5;ClickHouse</a>
+<ul>
+<li><a href="#%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86">&#x670D;&#x52A1;&#x7BA1;&#x7406;</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E9%9B%86%E7%BE%A4">&#x6D4B;&#x8BD5;&#x96C6;&#x7FA4;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sql">SQL</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93">&#x6570;&#x636E;&#x5E93;</a></li>
+<li><a href="#%E8%A1%A8">&#x8868;</a></li>
+<li><a href="#%E5%88%86%E5%8C%BA">&#x5206;&#x533A;</a></li>
+<li><a href="#%E6%97%A5%E6%9C%9F">&#x65E5;&#x671F;</a></li>
+<li><a href="#%E6%AD%A3%E5%88%99">&#x6B63;&#x5219;</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0">&#x51FD;&#x6570;</a>
+<ul>
+<li><a href="#grouparray">groupArray</a></li>
+<li><a href="#array-join">ARRAY JOIN</a></li>
+<li><a href="#%E5%88%86%E7%BB%84%E7%AD%9B%E9%80%89">&#x5206;&#x7EC4;&#x7B5B;&#x9009;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D">&#x6545;&#x969C;&#x4FEE;&#x590D;</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="%E5%AE%89%E8%A3%85">&#x5B89;&#x88C5;</h2>
+
+<h3 class="mume-header" id="%E7%B3%BB%E7%BB%9F">&#x7CFB;&#x7EDF;</h3>
+
+<h4 class="mume-header" id="%E4%BE%9D%E8%B5%96%E6%A3%80%E6%9F%A5">&#x4F9D;&#x8D56;&#x68C0;&#x67E5;</h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># CPU&#x5FC5;&#x987B;&#x652F;&#x6301;SSE4.2&#x6307;&#x4EE4;&#x96C6;</span>
+<span class="token function">grep</span> -q sse4_2 /proc/cpuinfo <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Supported&quot;</span>
+
+<span class="token comment"># &#x4F9D;&#x8D56;glibc-2.16</span>
+yum info glibc <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&apos;^Version&apos;</span> <span class="token operator">|</span> <span class="token function">uniq</span>
+<span class="token comment"># yum -y install glibc glibc-headers glibc-common glibc-devel</span>
+</pre><h4 class="mume-header" id="%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99">&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;</h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash">systemctl disable firewalld.service
+systemctl stop firewalld.service
+firewall-cmd --state
+</pre><h4 class="mume-header" id="%E9%85%8D%E7%BD%AEhostszookeeperindexhtml%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE"><a href="../zookeeper/index.html#%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE">&#x914D;&#x7F6E;Hosts</a></h4>
+
+<h4 class="mume-header" id="%E5%AE%89%E8%A3%85zookeeperzookeeperindexhtml"><a href="../zookeeper/index.html">&#x5B89;&#x88C5;Zookeeper</a></h4>
+
+<h3 class="mume-header" id="%E5%AE%89%E8%A3%85clickhouse">&#x5B89;&#x88C5;ClickHouse</h3>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">mkdir</span> clickhouse<span class="token punctuation">;</span> <span class="token function">pushd</span> clickhouse
+
+<span class="token comment"># CLICKHOUSE_REPO=&apos;https://repo.yandex.ru/clickhouse/rpm/stable/x86_64&apos;</span>
+<span class="token assign-left variable">CLICKHOUSE_REPO</span><span class="token operator">=</span><span class="token string">&apos;http://192.168.19.90/files/clickhouse/rpm&apos;</span>
+<span class="token assign-left variable">CLICKHOUSE_VERSION</span><span class="token operator">=</span><span class="token string">&apos;20.8.3.18-2&apos;</span>
+<span class="token comment"># echo &quot;${CLICKHOUSE_REPO}/clickhouse-common-static-${CLICKHOUSE_VERSION}.x86_64.rpm&quot;</span>
+<span class="token comment"># echo &quot;${CLICKHOUSE_REPO}/clickhouse-server-${CLICKHOUSE_VERSION}.noarch.rpm&quot;</span>
+<span class="token comment"># echo &quot;${CLICKHOUSE_REPO}/clickhouse-client-${CLICKHOUSE_VERSION}.noarch.rpm&quot;</span>
+<span class="token function">wget</span> <span class="token string">&quot;<span class="token variable">${CLICKHOUSE_REPO}</span>/clickhouse-common-static-<span class="token variable">${CLICKHOUSE_VERSION}</span>.x86_64.rpm&quot;</span>
+<span class="token function">wget</span> <span class="token string">&quot;<span class="token variable">${CLICKHOUSE_REPO}</span>/clickhouse-server-<span class="token variable">${CLICKHOUSE_VERSION}</span>.noarch.rpm&quot;</span>
+<span class="token function">wget</span> <span class="token string">&quot;<span class="token variable">${CLICKHOUSE_REPO}</span>/clickhouse-client-<span class="token variable">${CLICKHOUSE_VERSION}</span>.noarch.rpm&quot;</span>
+
+yum -y localinstall ./*.rpm
+<span class="token function">popd</span>
+
+systemctl stop clickhouse-server
+systemctl status clickhouse-server
+<span class="token comment"># systemctl start clickhouse-server</span>
+</pre><h3 class="mume-header" id="%E9%85%8D%E7%BD%AEclickhouse">&#x914D;&#x7F6E;ClickHouse</h3>
+
+<h4 class="mume-header" id="configxmlhttpsclickhousetechdocszhoperationsconfiguration-files"><a href="https://clickhouse.tech/docs/zh/operations/configuration-files/">config.xml</a></h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">vim</span> /etc/clickhouse-server/config.xml
+<span class="token comment"># :?&lt;listen_host&gt;</span>
+<span class="token comment"># &lt;Enter&gt;</span>
+<span class="token comment"># ...</span>
+<span class="token comment"># :?&lt;interserver_http_host&gt;</span>
+<span class="token comment"># &lt;Enter&gt;</span>
+<span class="token comment"># ...</span>
+<span class="token comment"># wq</span>
+<span class="token function">grep</span> <span class="token string">&apos;&lt;listen_host&gt;&apos;</span> /etc/clickhouse-server/config.xml
+<span class="token function">grep</span> <span class="token string">&apos;&lt;interserver_http_host&gt;&apos;</span> /etc/clickhouse-server/config.xml
+</pre><pre data-role="codeBlock" data-info="xml" class="language-xml">    <span class="token comment">&lt;!-- &#x5168;&#x57DF;&#x66B4;&#x9732; --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>listen_host</span><span class="token punctuation">&gt;</span></span>::<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>listen_host</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>listen_host</span><span class="token punctuation">&gt;</span></span>0.0.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>listen_host</span><span class="token punctuation">&gt;</span></span>
+</pre><pre data-role="codeBlock" data-info="xml" class="language-xml">    <span class="token comment">&lt;!-- &#x4E3B;&#x673A;&#x540D;&#x79F0;&#xFF08;&#x9700;&#x8981;&#x5B9A;&#x5236;&#xFF09; --&gt;</span>
+    <span class="token comment">&lt;!-- &#x2193;&#x2193;&#x2193;`hostname -f`&#x2193;&#x2193;&#x2193; --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>interserver_http_host</span><span class="token punctuation">&gt;</span></span>clickhouse1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>interserver_http_host</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- &#x2191;&#x2191;&#x2191;`hostname -f`&#x2191;&#x2191;&#x2191; --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>timezone</span><span class="token punctuation">&gt;</span></span>Asia/Shanghai<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>timezone</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>include_from</span><span class="token punctuation">&gt;</span></span>/etc/clickhouse-server/metrika.xml<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>include_from</span><span class="token punctuation">&gt;</span></span>
+</pre><h4 class="mume-header" id="userxml">user.xml</h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x751F;&#x6210;SHA256&#x5BC6;&#x94A5;</span>
+<span class="token builtin class-name">echo</span> -n <span class="token string">&apos;ckpwd&apos;</span> <span class="token operator">|</span> sha256sum
+
+<span class="token function">vim</span> /etc/clickhouse-server/users.xml
+<span class="token comment"># :?&lt;password&gt;</span>
+<span class="token function">grep</span> <span class="token string">&apos;^ *&lt;password&apos;</span> /etc/clickhouse-server/users.xml
+</pre><pre data-role="codeBlock" data-info="xml" class="language-xml"><span class="token comment">&lt;!-- &#x4EC5;&#x9009;&#x62E9;&#x4EE5;&#x4E0B;&#x4E00;&#x4E2A;&#x8BBE;&#x7F6E; --&gt;</span>
+
+<span class="token comment">&lt;!-- &#x660E;&#x6587;&#x5BC6;&#x94A5; --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>password</span><span class="token punctuation">&gt;</span></span>ckpwd<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>password</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- &#x5BC6;&#x6587;&#x5BC6;&#x94A5; --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>password_sha256_hex</span><span class="token punctuation">&gt;</span></span>0fcde7eb94e529578898ccb51c9cb941e51447e1d45cdc68deba25c38c578967<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>password_sha256_hex</span><span class="token punctuation">&gt;</span></span>
+</pre><h4 class="mume-header" id="metricaxml">metrica.xml</h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">rm</span> -f /etc/clickhouse-server/metrika.xml
+<span class="token function">vim</span> /etc/clickhouse-server/metrika.xml
+</pre><pre data-role="codeBlock" data-info="xml" class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>yandex</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>clickhouse_remote_servers</span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- &#x81EA;&#x5B9A;&#x4E49;&#x96C6;&#x7FA4;&#x540D;&#x79F0; --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ck_cluster</span><span class="token punctuation">&gt;</span></span>
+            <span class="token comment">&lt;!-- &#x5206;&#x7247;1 --&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>shard</span><span class="token punctuation">&gt;</span></span>
+                <span class="token comment">&lt;!-- &#x5206;&#x7247;&#x6743;&#x91CD;&#xFF0C;&#x591A;&#x5C11;&#x6982;&#x7387;&#x5199;&#x5165;&#x6B64;&#x5206;&#x7247; --&gt;</span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>weight</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>weight</span><span class="token punctuation">&gt;</span></span>
+                <span class="token comment">&lt;!-- &#x4E0D;&#x53EA;&#x5C06;&#x6570;&#x636E;&#x5199;&#x5165;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x526F;&#x672C; --&gt;</span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>internal_replication</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>internal_replication</span><span class="token punctuation">&gt;</span></span>
+                <span class="token comment">&lt;!-- &#x526F;&#x672C;1 --&gt;</span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>replica</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>host</span><span class="token punctuation">&gt;</span></span>clickhouse1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>host</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>port</span><span class="token punctuation">&gt;</span></span>9000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>port</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>replica</span><span class="token punctuation">&gt;</span></span>
+                <span class="token comment">&lt;!-- &#x526F;&#x672C;2 --&gt;</span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>replica</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>host</span><span class="token punctuation">&gt;</span></span>clickhouse2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>host</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>port</span><span class="token punctuation">&gt;</span></span>9000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>port</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>replica</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>shard</span><span class="token punctuation">&gt;</span></span>
+            <span class="token comment">&lt;!-- &#x5206;&#x7247;2 --&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>shard</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>weight</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>weight</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>internal_replication</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>internal_replication</span><span class="token punctuation">&gt;</span></span>
+                <span class="token comment">&lt;!-- &#x526F;&#x672C;1 --&gt;</span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>replica</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>host</span><span class="token punctuation">&gt;</span></span>clickhouse3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>host</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>port</span><span class="token punctuation">&gt;</span></span>9000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>port</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>replica</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>shard</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ck_cluster</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>clickhouse_remote_servers</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>zookeeper-servers</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>node</span> <span class="token attr-name">index</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>host</span><span class="token punctuation">&gt;</span></span>zookeeper1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>host</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>port</span><span class="token punctuation">&gt;</span></span>2181<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>port</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>node</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>node</span> <span class="token attr-name">index</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>host</span><span class="token punctuation">&gt;</span></span>zookeeper2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>host</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>port</span><span class="token punctuation">&gt;</span></span>2181<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>port</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>node</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>node</span> <span class="token attr-name">index</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>host</span><span class="token punctuation">&gt;</span></span>zookeeper3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>host</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>port</span><span class="token punctuation">&gt;</span></span>2181<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>port</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>node</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>zookeeper-servers</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- &#x5F53;&#x524D;&#x4E3B;&#x673A;&#x6240;&#x5728;&#x96C6;&#x7FA4;-&#x5206;&#x7247;-&#x526F;&#x672C;&#xFF08;&#x9700;&#x8981;&#x5B9A;&#x5236;&#xFF09; --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>macros</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>layer</span><span class="token punctuation">&gt;</span></span>ck_cluster<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>layer</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>shard</span><span class="token punctuation">&gt;</span></span>01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>shard</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>replica</span><span class="token punctuation">&gt;</span></span>clickhouse1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>replica</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>macros</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>networks</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ip</span><span class="token punctuation">&gt;</span></span>::/0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ip</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>networks</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>clickhouse_compression</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>case</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>min_part_size</span><span class="token punctuation">&gt;</span></span>10000000000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>min_part_size</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>min_part_size_ratio</span><span class="token punctuation">&gt;</span></span>0.01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>min_part_size_ratio</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>method</span><span class="token punctuation">&gt;</span></span>lz4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>method</span><span class="token punctuation">&gt;</span></span>
+            <span class="token comment">&lt;!-- &#x538B;&#x7F29;&#x7B97;&#x6CD5;: zstd | lz4 --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>case</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>clickhouse_compression</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>yandex</span><span class="token punctuation">&gt;</span></span>
+</pre><h3 class="mume-header" id="%E8%B0%83%E8%AF%95clickhouse">&#x8C03;&#x8BD5;ClickHouse</h3>
+
+<h4 class="mume-header" id="%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86">&#x670D;&#x52A1;&#x7BA1;&#x7406;</h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># Debug&#x8FD0;&#x884C;</span>
+<span class="token function">sudo</span> -u clickhouse clickhouse-server --config-file<span class="token operator">=</span>/etc/clickhouse-server/config.xml
+</pre><pre data-role="codeBlock" data-info="bash" class="language-bash">systemctl start clickhouse-server
+systemctl restart clickhouse-server
+systemctl status clickhouse-server
+</pre><h4 class="mume-header" id="%E6%B5%8B%E8%AF%95%E9%9B%86%E7%BE%A4">&#x6D4B;&#x8BD5;&#x96C6;&#x7FA4;</h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># clickhouse-client --multiline --user &lt;&#x7528;&#x6237;&#x540D;&gt; --password &lt;&#x5BC6;&#x7801;&gt;</span>
+clickhouse-client --multiline --user <span class="token operator">&lt;</span>&#x7528;&#x6237;&#x540D;<span class="token operator">&gt;</span> --password <span class="token operator">&lt;</span>&#x5BC6;&#x7801;<span class="token operator">&gt;</span>
+clickhouse-client -m
+</pre><h2 class="mume-header" id="sql">SQL</h2>
+
+<blockquote>
+<p><a href="https://clickhouse.tech/docs/zh/sql-reference/syntax/">Clickhouse SQL</a></p>
+</blockquote>
+<h3 class="mume-header" id="%E6%95%B0%E6%8D%AE%E5%BA%93">&#x6570;&#x636E;&#x5E93;</h3>
+
+<pre data-role="codeBlock" data-info="SQL" class="language-sql"><span class="token comment">-- &#x521B;&#x5EFA;&#x96C6;&#x7FA4;&#x5E93;</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-DATABASE">DATABASE</span> <span class="token keyword keyword-IF">IF</span> <span class="token operator">NOT</span> <span class="token keyword keyword-EXISTS">EXISTS</span> dbname <span class="token keyword keyword-ON">ON</span> CLUSTER ck_cluster<span class="token punctuation">;</span>
+
+<span class="token comment">-- &#x5220;&#x9664;&#x96C6;&#x7FA4;&#x5E93;</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-DATABASE">DATABASE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> dbname <span class="token keyword keyword-ON">ON</span> CLUSTER ck_cluster<span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="%E8%A1%A8">&#x8868;</h3>
+
+<pre data-role="codeBlock" data-info="SQL" class="language-sql"><span class="token comment">-- &#x521B;&#x5EFA;&#x672C;&#x5730;&#x8868;&#x5E76;&#x540C;&#x6B65;&#x5230;&#x96C6;&#x7FA4;</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-TABLE">TABLE</span> <span class="token keyword keyword-IF">IF</span> <span class="token operator">NOT</span> <span class="token keyword keyword-EXISTS">EXISTS</span>
+    dbname<span class="token punctuation">.</span>table_local
+<span class="token keyword keyword-ON">ON</span> CLUSTER
+    ck_cluster
+<span class="token punctuation">(</span>
+    <span class="token punctuation">`</span>EventDate<span class="token punctuation">`</span> <span class="token keyword keyword-Date">Date</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>CounterID<span class="token punctuation">`</span> UInt32<span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>UserID<span class="token punctuation">`</span> UInt32
+<span class="token punctuation">)</span>
+<span class="token keyword keyword-ENGINE">ENGINE</span> <span class="token operator">=</span> ReplicatedMergeTree<span class="token punctuation">(</span>
+    <span class="token string">&apos;/clickhouse/tables/{layer}-{shard}/table_local&apos;</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;{replica}&apos;</span>
+<span class="token punctuation">)</span>
+<span class="token keyword keyword-PARTITION">PARTITION</span> <span class="token keyword keyword-BY">BY</span> <span class="token punctuation">(</span>EventDate<span class="token punctuation">)</span>
+<span class="token keyword keyword-ORDER">ORDER</span> <span class="token keyword keyword-BY">BY</span> <span class="token punctuation">(</span>CounterID<span class="token punctuation">,</span> intHash32<span class="token punctuation">(</span>UserID<span class="token punctuation">)</span><span class="token punctuation">)</span>
+SAMPLE <span class="token keyword keyword-BY">BY</span> intHash32<span class="token punctuation">(</span>UserID<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- &#x57FA;&#x4E8E;&#x672C;&#x5730;&#x8868;&#x521B;&#x5EFA;&#x96C6;&#x7FA4;&#x8868;&#xFF08;&#x76F8;&#x5F53;&#x4E8E;&#x89C6;&#x56FE;&#xFF09;</span>
+<span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-TABLE">TABLE</span> <span class="token keyword keyword-IF">IF</span> <span class="token operator">NOT</span> <span class="token keyword keyword-EXISTS">EXISTS</span>
+    dbname<span class="token punctuation">.</span>table_distributed
+<span class="token keyword keyword-ON">ON</span> CLUSTER
+    ck_cluster
+<span class="token keyword keyword-AS">AS</span>
+    dbname<span class="token punctuation">.</span>table_local
+<span class="token keyword keyword-ENGINE">ENGINE</span> <span class="token operator">=</span> <span class="token keyword keyword-Distributed">Distributed</span><span class="token punctuation">(</span>
+    ck_cluster<span class="token punctuation">,</span>
+    dbname<span class="token punctuation">,</span>
+    table_local<span class="token punctuation">,</span>
+    rand<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- Distributed({cluster}, {local_database}, {local_table}, rand())</span>
+
+<span class="token comment">-- &#x672C;&#x5730;&#x8868;&#x63D2;&#x5165;&#x5220;&#x9664;</span>
+<span class="token comment">-- INSERT INTO dbname.table_local VALUES(&apos;2020-03-11&apos;,22,46);</span>
+<span class="token comment">-- ALTER TABLE dbname.table_local DELETE WHERE UserID=46;</span>
+
+<span class="token comment">-- &#x96C6;&#x7FA4;&#x8868;&#x63D2;&#x5165;&#x5220;&#x9664;</span>
+<span class="token keyword keyword-INSERT">INSERT</span> <span class="token keyword keyword-INTO">INTO</span> dbname<span class="token punctuation">.</span>table_distributed <span class="token keyword keyword-VALUES">VALUES</span>
+    <span class="token punctuation">(</span><span class="token string">&apos;2020-03-11&apos;</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">54</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">&apos;2020-03-11&apos;</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">57</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token string">&apos;2020-03-12&apos;</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">58</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-ALTER">ALTER</span> <span class="token keyword keyword-TABLE">TABLE</span> dbname<span class="token punctuation">.</span>table_local <span class="token keyword keyword-ON">ON</span> CLUSTER ck_cluster <span class="token keyword keyword-DELETE">DELETE</span> <span class="token keyword keyword-WHERE">WHERE</span> UserID<span class="token operator">=</span><span class="token number">54</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- &#x3010;&#x96C6;&#x7FA4;&#x8868;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x3011;</span>
+<span class="token comment">-- &#x96C6;&#x7FA4;&#x8868; &#x63D2;&#x5165;/&#x6E05;&#x7A7A; &#x4F1A;&#x6709;&#x5EF6;&#x65F6;&#x60C5;&#x51B5;</span>
+<span class="token comment">-- GLOBAL IN &#x4EE3;&#x66FF; IN</span>
+<span class="token comment">-- GLOBAL NOT JOIN &#x4EE3;&#x66FF; NOT JOIN</span>
+<span class="token comment">-- GLOBAL JOIN &#x4EE3;&#x66FF; JOIN</span>
+
+<span class="token comment">-- &#x6E05;&#x7A7A;&#x672C;&#x5730;&#x8868;&#x6570;&#x636E;&#x5E76;&#x540C;&#x6B65;&#x5230;&#x96C6;&#x7FA4;&#xFF08;&#x6E05;&#x7A7A;&#x96C6;&#x7FA4;&#x8868;&#xFF09;</span>
+<span class="token keyword keyword-TRUNCATE">TRUNCATE</span> <span class="token keyword keyword-TABLE">TABLE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> dbname<span class="token punctuation">.</span>table_local <span class="token keyword keyword-ON">ON</span> CLUSTER ck_cluster<span class="token punctuation">;</span>
+
+<span class="token comment">-- &#x5220;&#x9664;&#x8868;</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-TABLE">TABLE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> dbname<span class="token punctuation">.</span>table_distributed <span class="token keyword keyword-ON">ON</span> CLUSTER ck_cluster<span class="token punctuation">;</span>
+<span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-TABLE">TABLE</span> <span class="token keyword keyword-IF">IF</span> <span class="token keyword keyword-EXISTS">EXISTS</span> dbname<span class="token punctuation">.</span>table_local <span class="token keyword keyword-ON">ON</span> CLUSTER ck_cluster<span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="%E5%88%86%E5%8C%BA">&#x5206;&#x533A;</h3>
+
+<pre data-role="codeBlock" data-info="SQL" class="language-sql"><span class="token comment">-- &#x67E5;&#x770B;&#x672C;&#x5730;&#x8868;&#x5206;&#x533A;</span>
+<span class="token keyword keyword-SELECT">SELECT</span>
+    <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span><span class="token keyword keyword-partition">partition</span><span class="token punctuation">`</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>partition_id<span class="token punctuation">`</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>path<span class="token punctuation">`</span>
+<span class="token keyword keyword-FROM">FROM</span> system<span class="token punctuation">.</span>parts
+<span class="token keyword keyword-WHERE">WHERE</span>
+    <span class="token punctuation">`</span><span class="token keyword keyword-database">database</span><span class="token punctuation">`</span> <span class="token operator">=</span> <span class="token string">&apos;dbname&apos;</span> <span class="token operator">AND</span>
+    <span class="token punctuation">`</span><span class="token keyword keyword-table">table</span><span class="token punctuation">`</span> <span class="token operator">=</span><span class="token string">&apos;table_local&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- &#x5220;&#x9664;&#x672C;&#x5730;&#x8868;&#x5206;&#x533A;&#x5E76;&#x540C;&#x6B65;&#x5230;&#x96C6;&#x7FA4;</span>
+<span class="token keyword keyword-ALTER">ALTER</span> <span class="token keyword keyword-TABLE">TABLE</span> dbname<span class="token punctuation">.</span>table_local <span class="token keyword keyword-ON">ON</span> CLUSTER ck_cluster <span class="token keyword keyword-DROP">DROP</span> <span class="token keyword keyword-PARTITION">PARTITION</span> <span class="token string">&apos;partition&apos;</span><span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="%E6%97%A5%E6%9C%9F">&#x65E5;&#x671F;</h3>
+
+<pre data-role="codeBlock" data-info="SQL" class="language-sql"><span class="token keyword keyword-SELECT">SELECT</span>  <span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>                                 <span class="token keyword keyword-AS">AS</span> t
+       <span class="token punctuation">,</span>toUnixTimestamp<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                    <span class="token keyword keyword-AS">AS</span> ts
+       <span class="token punctuation">,</span>toString<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                           <span class="token keyword keyword-AS">AS</span> s1
+       <span class="token punctuation">,</span>formatDateTime<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token string">&apos;%Y-%m-%d %H:%M:%S&apos;</span><span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> s2
+       <span class="token comment">-- ID</span>
+       <span class="token punctuation">,</span>toYYYYMM<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                           <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>month_id<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toYYYYMMDD<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                         <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>day_id<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toYYYYMMDDhhmmss<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                   <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>second_id<span class="token punctuation">`</span>
+       <span class="token comment">-- &#x65E5;&#x671F;</span>
+       <span class="token punctuation">,</span>toYear<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                             <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x5E74;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toQuarter<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                          <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x5B63;&#x5EA6;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toMonth<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                            <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x6708;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toDate<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                             <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span><span class="token operator">%</span>Y<span class="token operator">-</span><span class="token operator">%</span>m<span class="token operator">-</span><span class="token operator">%</span>d<span class="token punctuation">`</span>
+       <span class="token comment">-- &#x65E5;&#x671F;</span>
+       <span class="token punctuation">,</span>toHour<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                             <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x65F6;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toMinute<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                           <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x5206;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toSecond<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                           <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x79D2;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toTime<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                             <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span><span class="token operator">%</span>H:<span class="token operator">%</span>M:<span class="token operator">%</span>S<span class="token punctuation">`</span>
+       <span class="token comment">-- &#x6392;&#x540D;</span>
+       <span class="token punctuation">,</span>toDayOfYear<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                        <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x5E74;&#x4E2D;&#x5929;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toDayOfMonth<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                       <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x6708;&#x4E2D;&#x5929;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toDayOfWeek<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                        <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x5468;&#x4E2D;&#x5929;<span class="token punctuation">`</span>
+       <span class="token comment">-- &#x65F6;&#x533A;</span>
+       <span class="token punctuation">,</span>toDate<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token string">&apos;Asia/Shanghai&apos;</span><span class="token punctuation">)</span>             <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x4E0A;&#x6D77;&#x65E5;&#x671F;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toDateTime<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token string">&apos;Asia/Shanghai&apos;</span><span class="token punctuation">)</span>         <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x4E0A;&#x6D77;&#x65F6;&#x95F4;<span class="token punctuation">`</span>
+       <span class="token comment">-- &#x8D77;&#x59CB;</span>
+       <span class="token punctuation">,</span>toStartOfYear<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                      <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x59CB;&#x5E74;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toStartOfMonth<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                     <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x59CB;&#x6708;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toStartOfQuarter<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                   <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x59CB;&#x5B63;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toStartOfDay<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                       <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x59CB;&#x5929;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toStartOfHour<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                      <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x59CB;&#x65F6;<span class="token punctuation">`</span>
+       <span class="token punctuation">,</span>toStartOfMinute<span class="token punctuation">(</span>t<span class="token punctuation">)</span>                    <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>&#x59CB;&#x5206;<span class="token punctuation">`</span>
+       <span class="token comment">-- &#x4E4B;&#x540E;</span>
+       <span class="token punctuation">,</span>addYears<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>addQuarters<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>addMonths<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>addWeeks<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>addDays<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>addHours<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>addMinutes<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>addSeconds<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token comment">-- &#x4E4B;&#x524D;</span>
+       <span class="token punctuation">,</span>subtractYears<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>subtractQuarters<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>subtractMonths<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>subtractWeeks<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>subtractDays<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>subtractHours<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>subtractMinutes<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token punctuation">,</span>subtractSeconds<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token comment">-- &#x65F6;&#x95F4;&#x5DEE;</span>
+       <span class="token punctuation">,</span>DATEDIFF<span class="token punctuation">(</span><span class="token string">&apos;year&apos;</span><span class="token punctuation">,</span>t<span class="token punctuation">,</span>addYears<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>      <span class="token keyword keyword-AS">AS</span> diff_years
+       <span class="token punctuation">,</span>DATEDIFF<span class="token punctuation">(</span><span class="token string">&apos;month&apos;</span><span class="token punctuation">,</span>t<span class="token punctuation">,</span>addMonths<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token keyword keyword-AS">AS</span> diff_months
+       <span class="token punctuation">,</span>DATEDIFF<span class="token punctuation">(</span><span class="token string">&apos;week&apos;</span><span class="token punctuation">,</span>t<span class="token punctuation">,</span>addWeeks<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>      <span class="token keyword keyword-AS">AS</span> diff_week
+       <span class="token punctuation">,</span>DATEDIFF<span class="token punctuation">(</span><span class="token string">&apos;day&apos;</span><span class="token punctuation">,</span>t<span class="token punctuation">,</span>addDays<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>        <span class="token keyword keyword-AS">AS</span> diff_days
+       <span class="token punctuation">,</span>DATEDIFF<span class="token punctuation">(</span><span class="token string">&apos;hour&apos;</span><span class="token punctuation">,</span>t<span class="token punctuation">,</span>addHours<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>      <span class="token keyword keyword-AS">AS</span> diff_hours
+       <span class="token punctuation">,</span>DATEDIFF<span class="token punctuation">(</span><span class="token string">&apos;minute&apos;</span><span class="token punctuation">,</span>t<span class="token punctuation">,</span>addMinutes<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token keyword keyword-AS">AS</span> diff_minutes
+       <span class="token punctuation">,</span>DATEDIFF<span class="token punctuation">(</span><span class="token string">&apos;second&apos;</span><span class="token punctuation">,</span>t<span class="token punctuation">,</span>addSeconds<span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token keyword keyword-AS">AS</span> diff_seconds <span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="%E6%AD%A3%E5%88%99">&#x6B63;&#x5219;</h3>
+
+<pre data-role="codeBlock" data-info="SQL" class="language-sql"><span class="token comment">-- &#x6B63;&#x5219;&#x5339;&#x914D;</span>
+<span class="token keyword keyword-SELECT">SELECT</span> <span class="token keyword keyword-DISTINCT">DISTINCT</span><span class="token punctuation">(</span>region<span class="token punctuation">)</span> <span class="token keyword keyword-FROM">FROM</span> dbname<span class="token punctuation">.</span>table_distributed
+<span class="token keyword keyword-WHERE">WHERE</span> <span class="token operator">NOT</span> <span class="token keyword keyword-match">match</span><span class="token punctuation">(</span>region <span class="token punctuation">,</span> <span class="token string">&apos;^[0-9]+$&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="%E5%87%BD%E6%95%B0">&#x51FD;&#x6570;</h3>
+
+<blockquote>
+<p><a href="https://clickhouse.tech/docs/zh/sql-reference/functions/">functions</a><br>
+<a href="https://clickhouse.tech/docs/zh/sql-reference/aggregate-functions/reference/">aggregate-functions</a><br>
+<a href="https://clickhouse.tech/docs/zh/sql-reference/aggregate-functions/combinators/">aggregate-combinators</a></p>
+</blockquote>
+<h4 class="mume-header" id="grouparray">groupArray</h4>
+
+<pre data-role="codeBlock" data-info="SQL" class="language-sql"><span class="token keyword keyword-SELECT">SELECT</span>
+    <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span>
+    groupArray<span class="token punctuation">(</span><span class="token punctuation">`</span><span class="token keyword keyword-identity">identity</span><span class="token punctuation">`</span><span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span><span class="token keyword keyword-identity">identity</span><span class="token punctuation">`</span><span class="token punctuation">,</span>
+    arrayEnumerate<span class="token punctuation">(</span><span class="token punctuation">`</span><span class="token keyword keyword-identity">identity</span><span class="token punctuation">`</span><span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span><span class="token keyword keyword-index">index</span><span class="token punctuation">`</span>
+<span class="token keyword keyword-FROM">FROM</span> <span class="token punctuation">(</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> <span class="token string">&apos;Ann&apos;</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token string">&apos;Student&apos;</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span><span class="token keyword keyword-identity">identity</span><span class="token punctuation">`</span>
+    <span class="token keyword keyword-UNION">UNION</span> <span class="token keyword keyword-ALL">ALL</span>
+    <span class="token keyword keyword-SELECT">SELECT</span> <span class="token string">&apos;Ann&apos;</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token string">&apos;American&apos;</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span><span class="token keyword keyword-identity">identity</span><span class="token punctuation">`</span>
+<span class="token punctuation">)</span>
+<span class="token keyword keyword-GROUP">GROUP</span> <span class="token keyword keyword-BY">BY</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span>
+</pre><h4 class="mume-header" id="array-join">ARRAY JOIN</h4>
+
+<pre data-role="codeBlock" data-info="SQL" class="language-sql"><span class="token keyword keyword-SELECT">SELECT</span> <span class="token operator">*</span> <span class="token keyword keyword-FROM">FROM</span> <span class="token punctuation">(</span>
+    <span class="token keyword keyword-SELECT">SELECT</span>
+        <span class="token string">&apos;Ann&apos;</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token string">&apos;Student&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;American&apos;</span><span class="token punctuation">]</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span><span class="token keyword keyword-identity">identity</span><span class="token punctuation">`</span>
+<span class="token punctuation">)</span>
+ARRAY <span class="token keyword keyword-JOIN">JOIN</span> <span class="token punctuation">`</span><span class="token keyword keyword-identity">identity</span><span class="token punctuation">`</span><span class="token punctuation">;</span>
+</pre><h4 class="mume-header" id="%E5%88%86%E7%BB%84%E7%AD%9B%E9%80%89">&#x5206;&#x7EC4;&#x7B5B;&#x9009;</h4>
+
+<ol>
+<li>&#x5206;&#x7EC4;&#x67E5;&#x8BE2;</li>
+<li>&#x6309;&#x7EC4;&#x8FC7;&#x6EE4;&#x6570;&#x636E;</li>
+<li>&#x63D0;&#x53D6;&#x7EC4;&#x5185;&#x6570;&#x636E;</li>
+<li>&#x8FD8;&#x539F;&#x5206;&#x7EC4;</li>
+</ol>
+<pre data-role="codeBlock" data-info="SQL" class="language-sql"><span class="token comment">-- &#x8FD8;&#x539F;&#x5206;&#x7EC4;</span>
+<span class="token keyword keyword-SELECT">SELECT</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>class<span class="token punctuation">`</span>
+<span class="token keyword keyword-FROM">FROM</span> <span class="token punctuation">(</span>
+    <span class="token comment">-- &#x7B5B;&#x9009;&#x73ED;&#x7EA7;&#x5185;&#x6210;&#x5458;&#x4EBA;&#x6570;&#x8D85;&#x8FC7;2&#x4EBA;&#x7684;&#x73ED;&#x7EA7;</span>
+    <span class="token keyword keyword-SELECT">SELECT</span>
+        <span class="token punctuation">`</span>class<span class="token punctuation">`</span><span class="token punctuation">,</span>
+        groupArray<span class="token punctuation">(</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span>
+        groupArray<span class="token punctuation">(</span><span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">)</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span>
+    <span class="token keyword keyword-FROM">FROM</span> <span class="token punctuation">(</span>
+        <span class="token comment">-- &#x6A21;&#x62DF;&#x6570;&#x636E;</span>
+        <span class="token keyword keyword-SELECT">SELECT</span> <span class="token number">1</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token string">&apos;&#x5F20;&#x4E09;&apos;</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token number">101</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>class<span class="token punctuation">`</span> <span class="token keyword keyword-UNION">UNION</span> <span class="token keyword keyword-ALL">ALL</span>
+        <span class="token keyword keyword-SELECT">SELECT</span> <span class="token number">2</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token string">&apos;&#x674E;&#x56DB;&apos;</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token number">101</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>class<span class="token punctuation">`</span> <span class="token keyword keyword-UNION">UNION</span> <span class="token keyword keyword-ALL">ALL</span>
+        <span class="token keyword keyword-SELECT">SELECT</span> <span class="token number">3</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token string">&apos;&#x738B;&#x4E94;&apos;</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token number">102</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>class<span class="token punctuation">`</span> <span class="token keyword keyword-UNION">UNION</span> <span class="token keyword keyword-ALL">ALL</span>
+        <span class="token keyword keyword-SELECT">SELECT</span> <span class="token number">4</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token string">&apos;&#x8D75;&#x516D;&apos;</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token number">102</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>class<span class="token punctuation">`</span> <span class="token keyword keyword-UNION">UNION</span> <span class="token keyword keyword-ALL">ALL</span>
+        <span class="token keyword keyword-SELECT">SELECT</span> <span class="token number">5</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token string">&apos;&#x94B1;&#x4E03;&apos;</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token number">102</span> <span class="token keyword keyword-AS">AS</span> <span class="token punctuation">`</span>class<span class="token punctuation">`</span>
+    <span class="token punctuation">)</span>
+    <span class="token keyword keyword-GROUP">GROUP</span> <span class="token keyword keyword-BY">BY</span> <span class="token punctuation">`</span>class<span class="token punctuation">`</span>
+    <span class="token keyword keyword-HAVING">HAVING</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">2</span>
+<span class="token punctuation">)</span> ARRAY <span class="token keyword keyword-JOIN">JOIN</span> <span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">,</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token punctuation">;</span>
+</pre><h2 class="mume-header" id="%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D">&#x6545;&#x969C;&#x4FEE;&#x590D;</h2>
+
+<pre data-role="codeBlock" data-info="log" class="language-log"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token operator">&lt;</span>Debug<span class="token operator">&gt;</span> Application<span class="token operator">:</span> Shut down storages<span class="token punctuation">.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token operator">&lt;</span>Debug<span class="token operator">&gt;</span> Application<span class="token operator">:</span> Destroyed global context<span class="token punctuation">.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token operator">&lt;</span>Error<span class="token operator">&gt;</span> Application<span class="token operator">:</span> Coordination<span class="token operator">:</span><span class="token operator">:</span>Exception<span class="token operator">:</span> No node<span class="token punctuation">,</span> path<span class="token operator">:</span> <span class="token operator">/</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</pre><pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">mv</span> <span class="token string">&apos;/var/lib/clickhouse/metadata&apos;</span> <span class="token string">&apos;/var/lib/clickhouse/metadata_bk&apos;</span>
+<span class="token function">mv</span> <span class="token string">&apos;/var/lib/clickhouse/data&apos;</span> <span class="token string">&apos;/var/lib/clickhouse/data_bk&apos;</span>
+</pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
